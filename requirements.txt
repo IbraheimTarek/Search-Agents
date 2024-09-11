@@ -1,0 +1,13 @@
+langchain
+langchain_community
+langchain_core
+langchain_huggingface
+langchain_groq
+python-dotenv
+streamlit
+pymupdf
+pypdf
+faiss-cpu
+python-docx
+openpyxl
+langchain_chroma
