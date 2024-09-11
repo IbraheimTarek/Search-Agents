@@ -32,4 +32,10 @@ if prompt:= st.chat_input(placeholder='what is machinlearning?'):
     llm = ChatGroq(api_key= api_key)
     tools = [search, arxiv, wiki]
     search_agent = initialize_agent(tools, llm, agent = AgentType.ZERO_SHOT_REACT_DESCRIPTION, handling_parse_errors = True)
-    
+
+    with st.chat_message("assistant"):
+        st_cb = StreamlitCallbackHandler(st.container(),expand_new_thoughts= False)
+        response = search_agent.run(st.session_state.messages, callbacks=[st_cb])
+        st.session_state.messages.append({'role':'assistant', 'content': response})
+        st.write(response)
+        

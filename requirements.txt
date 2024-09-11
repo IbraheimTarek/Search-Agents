@@ -11,3 +11,6 @@ faiss-cpu
 python-docx
 openpyxl
 langchain_chroma
+duckduckgo-search
+wikipedia
+arxiv
